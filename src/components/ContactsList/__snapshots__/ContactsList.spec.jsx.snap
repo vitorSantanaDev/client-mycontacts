@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ContactsList /> should match snapshot 1`] = `
+.c0 {
+  margin-top: 3.2rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 strong {
+  color: #222222;
+  font-size: calc(2.0rem + 0.4rem);
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #5061FC;
+  border-radius: 0.4rem;
+  font-weight: 700;
+  border: 2px solid #5061FC;
+  padding: 0.8rem 1.6rem;
+}
+
+.c1 a:hover {
+  color: white;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background-color: #5061FC;
+}
+
+.c2 {
+  margin-top: 2.4rem;
+}
+
+.c2 header button {
+  border: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent;
+  margin-bottom: 0.8rem;
+}
+
+.c2 header button span {
+  margin-right: 0.8rem;
+  font-weight: bold;
+  color: #5061FC;
+}
+
+.c4 {
+  border-radius: 4px;
+  background-color: white;
+  padding: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 + .c3 {
+  margin-top: 1.6rem;
+}
+
+.c4 .info .contact-name {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 .info .contact-name small {
+  padding: 0.4rem;
+  margin-left: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5061FC;
+  border-radius: 0.4rem;
+  background-color: #e0e3ff;
+}
+
+.c4 .info span {
+  display: block;
+  color: #BCBCBC;
+  font-size: 1.4rem;
+}
+
+.c4 .actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 .actions button {
+  border: none;
+  margin-left: 0.8rem;
+  background-color: transparent;
+}
+
+<div
+  class="c0"
+>
+  <header
+    class="c1"
+  >
+    <strong>
+      3 Contatos
+    </strong>
+    <a
+      href="#"
+    >
+      Novo contato
+    </a>
+  </header>
+  <div
+    class="c2"
+  >
+    <header>
+      <button
+        type="button"
+      >
+        <span>
+          Nome
+        </span>
+         
+        <img
+          alt="Arrow"
+          src="arrow.svg"
+        />
+      </button>
+    </header>
+    <div
+      class="c3 c4"
+    >
+      <div
+        class="info"
+      >
+        <div
+          class="contact-name"
+        >
+          <strong>
+            Vitor Santana
+          </strong>
+          <small>
+            Instagram
+          </small>
+        </div>
+        <span>
+          vitor@email.com
+        </span>
+        <span>
+          (41) 99999-9900
+        </span>
+      </div>
+      <div
+        class="actions"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Edit"
+            src="edit.svg"
+          />
+        </a>
+        <button
+          type="button"
+        >
+          <img
+            alt="Delete"
+            src="trash.svg"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="c3 c4"
+    >
+      <div
+        class="info"
+      >
+        <div
+          class="contact-name"
+        >
+          <strong>
+            Vitor Santana
+          </strong>
+          <small>
+            Instagram
+          </small>
+        </div>
+        <span>
+          vitor@email.com
+        </span>
+        <span>
+          (41) 99999-9900
+        </span>
+      </div>
+      <div
+        class="actions"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Edit"
+            src="edit.svg"
+          />
+        </a>
+        <button
+          type="button"
+        >
+          <img
+            alt="Delete"
+            src="trash.svg"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="c3 c4"
+    >
+      <div
+        class="info"
+      >
+        <div
+          class="contact-name"
+        >
+          <strong>
+            Vitor Santana
+          </strong>
+          <small>
+            Instagram
+          </small>
+        </div>
+        <span>
+          vitor@email.com
+        </span>
+        <span>
+          (41) 99999-9900
+        </span>
+      </div>
+      <div
+        class="actions"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Edit"
+            src="edit.svg"
+          />
+        </a>
+        <button
+          type="button"
+        >
+          <img
+            alt="Delete"
+            src="trash.svg"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

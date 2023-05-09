@@ -23,7 +23,8 @@ export default {
 	},
 	colors: {
 		mainBg: '#F5F6Fc',
-		primary: '#5061FC'
+		primary: '#5061FC',
+		gray: '#BCBCBC'
 	},
 	spacings: {
 		xxsmall: '0.8rem',

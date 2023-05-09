@@ -8,8 +8,12 @@ export default createGlobalStyle`
 		font-family: ${({ theme }) => theme.font.family};
 	}
 
+	html {
+      font-size: 62.5%;
+  }
+
 	body {
-		font-size: 16px;
+		font-size: ${({ theme }) => theme.font.sizes.medium};
 		background-color: ${({ theme }) => theme.colors.mainBg};
 	}
 

@@ -9,9 +9,6 @@ describe('<Header />', () => {
 		renderWithTheme(<Header />)
 
 		expect(screen.getByAltText(/My contacts/i)).toBeInTheDocument()
-		expect(
-			screen.getByPlaceholderText(/Pesquisar contato.../i)
-		).toBeInTheDocument()
 	})
 	it('should match snapshot', () => {
 		const { container } = renderWithTheme(<Header />)

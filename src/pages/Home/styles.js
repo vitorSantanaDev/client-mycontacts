@@ -11,6 +11,7 @@ export const Header = styled.header`
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		margin-top: ${theme.spacings.medium};
 
 		strong {
 			color: ${theme.colors.gray[900]};
@@ -101,6 +102,27 @@ export const Card = styled.div`
 				border: none;
 				margin-left: 0.8rem;
 				background-color: transparent;
+			}
+		}
+	`}
+`
+
+export const InputSearchContainer = styled.div`
+	${({ theme }) => css`
+		width: 100%;
+
+		input {
+			width: 100%;
+			height: 5rem;
+			border: none;
+			outline: none;
+			border-radius: 2.5rem;
+			background-color: white;
+			padding: 0 ${theme.spacings.medium};
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+
+			&::placeholder {
+				color: ${theme.colors.gray[200]};
 			}
 		}
 	`}

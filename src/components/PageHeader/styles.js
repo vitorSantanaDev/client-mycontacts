@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Container = styled.header`
 	${({ theme }) => css`
+		margin-bottom: ${theme.spacings.small};
 		a {
 			display: flex;
 			align-items: center;

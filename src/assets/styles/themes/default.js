@@ -32,6 +32,11 @@ export default {
 		gray: {
 			200: '#BCBCBC',
 			900: '#222222'
+		},
+		danger: {
+			main: '#FC5050',
+			light: '#F97171',
+			dark: '#F63131'
 		}
 	},
 	spacings: {

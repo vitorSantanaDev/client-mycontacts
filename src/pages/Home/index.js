@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import {
 	Card,
 	Header,
@@ -9,16 +11,18 @@ import {
 import arrow from '../../assets/images/icons/arrow.svg'
 import edit from '../../assets/images/icons/edit.svg'
 import trash from '../../assets/images/icons/trash.svg'
+import Loader from '../../components/Loader'
 
 export default function Home() {
 	return (
 		<Container>
+			<Loader />
 			<InputSearchContainer>
 				<input type="text" placeholder="Pesquisar contato..." />
 			</InputSearchContainer>
 			<Header>
 				<strong>3 Contatos</strong>
-				<a href="#">Novo contato</a>
+				<Link to="/new">Novo contato</Link>
 			</Header>
 			<ListContainer>
 				<header>
@@ -37,47 +41,9 @@ export default function Home() {
 					</div>
 
 					<div className="actions">
-						<a href="/">
+						<Link to="/edit/123">
 							<img src={edit} alt="Edit" />
-						</a>
-						<button type="button">
-							<img src={trash} alt="Delete" />
-						</button>
-					</div>
-				</Card>
-				<Card>
-					<div className="info">
-						<div className="contact-name">
-							<strong>Vitor Santana</strong>
-							<small>Instagram</small>
-						</div>
-						<span>vitor@email.com</span>
-						<span>(41) 99999-9900</span>
-					</div>
-
-					<div className="actions">
-						<a href="/">
-							<img src={edit} alt="Edit" />
-						</a>
-						<button type="button">
-							<img src={trash} alt="Delete" />
-						</button>
-					</div>
-				</Card>
-				<Card>
-					<div className="info">
-						<div className="contact-name">
-							<strong>Vitor Santana</strong>
-							<small>Instagram</small>
-						</div>
-						<span>vitor@email.com</span>
-						<span>(41) 99999-9900</span>
-					</div>
-
-					<div className="actions">
-						<a href="/">
-							<img src={edit} alt="Edit" />
-						</a>
+						</Link>
 						<button type="button">
 							<img src={trash} alt="Delete" />
 						</button>

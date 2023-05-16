@@ -11,6 +11,7 @@ export const InputComponent = styled.input`
 		padding: 0 ${theme.spacings.xsmall};
 		border-radius: ${theme.border.radius};
 		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+		appearance: none;
 
 		transition: border-color 0.2s ease-in;
 
@@ -37,6 +38,7 @@ export const SelectComponent = styled.select`
 		padding: 0 ${theme.spacings.xsmall};
 		border-radius: ${theme.border.radius};
 		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+		appearance: none;
 
 		transition: border-color 0.2s ease-in;
 

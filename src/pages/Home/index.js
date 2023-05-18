@@ -1,45 +1,83 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import {
 	Card,
 	Header,
 	Container,
-	ListContainer,
+	ListHeader,
 	InputSearchContainer
 } from './styles'
 
-import arrow from '../../assets/images/icons/arrow.svg'
+import formatPhone from '../../utils/formatPhone'
+
 import edit from '../../assets/images/icons/edit.svg'
+import arrow from '../../assets/images/icons/arrow.svg'
 import trash from '../../assets/images/icons/trash.svg'
 
 export default function Home() {
+	const [contacts, setContacts] = useState([])
+	const [orderBy, setOrderBy] = useState('asc')
+	const [searchTerm, setSearchTerm] = useState('')
+
+	const filteredContacts = contacts.filter((contact) =>
+		contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+	)
+
+	useEffect(() => {
+		fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`)
+			.then((response) => response.json())
+			.then((json) => setContacts(json))
+			.catch((error) => console.log(error))
+	}, [orderBy])
+
+	function handleToggleOrderBy() {
+		setOrderBy((prevState) => (prevState === 'asc' ? 'desc' : 'asc'))
+	}
+
+	function handleSearchTermChange({ target }) {
+		setSearchTerm(target.value)
+	}
+
 	return (
 		<Container>
 			<InputSearchContainer>
-				<input type="text" placeholder="Pesquisar contato..." />
+				<input
+					type="text"
+					value={searchTerm}
+					placeholder="Pesquisar contato..."
+					onChange={handleSearchTermChange}
+				/>
 			</InputSearchContainer>
 			<Header>
-				<strong>3 Contatos</strong>
+				<strong>
+					{filteredContacts.length}{' '}
+					{filteredContacts.length === 1 ? 'Contato' : 'Contatos'}
+				</strong>
 				<Link to="/new">Novo contato</Link>
 			</Header>
-			<ListContainer>
-				<header>
-					<button type="button">
+			{!!filteredContacts.length && (
+				<ListHeader orderBy={orderBy}>
+					<button type="button" onClick={handleToggleOrderBy}>
 						<span>Nome</span> <img src={arrow} alt="Arrow" />
 					</button>
-				</header>
-				<Card>
+				</ListHeader>
+			)}
+			{filteredContacts.map((contact) => (
+				<Card key={contact.id}>
 					<div className="info">
 						<div className="contact-name">
-							<strong>Vitor Santana</strong>
-							<small>Instagram</small>
+							<strong>{contact.name}</strong>
+							{!!contact.category_name && (
+								<small>{contact.category_name}</small>
+							)}
 						</div>
-						<span>vitor@email.com</span>
-						<span>(41) 99999-9900</span>
+						<span>{contact.email}</span>
+						<span>{formatPhone(contact.phone)}</span>
 					</div>
 
 					<div className="actions">
-						<Link to="/edit/123">
+						<Link to={`/edit/${contact.id}`}>
 							<img src={edit} alt="Edit" />
 						</Link>
 						<button type="button">
@@ -47,7 +85,7 @@ export default function Home() {
 						</button>
 					</div>
 				</Card>
-			</ListContainer>
+			))}
 		</Container>
 	)
 }

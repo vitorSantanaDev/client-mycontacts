@@ -35,23 +35,26 @@ export const Header = styled.header`
 	`}
 `
 
-export const ListContainer = styled.div`
-	${({ theme }) => css`
+export const ListHeader = styled.header`
+	${({ theme, orderBy }) => css`
 		margin-top: ${theme.spacings.small};
 
-		header {
-			button {
-				border: none;
-				display: flex;
-				align-items: center;
-				background: transparent;
-				margin-bottom: 0.8rem;
+		button {
+			border: none;
+			display: flex;
+			align-items: center;
+			background: transparent;
+			margin-bottom: 0.8rem;
 
-				span {
-					margin-right: 0.8rem;
-					font-weight: bold;
-					color: ${theme.colors.primary.main};
-				}
+			span {
+				margin-right: 0.8rem;
+				font-weight: bold;
+				color: ${theme.colors.primary.main};
+			}
+
+			img {
+				transition: transform 0.2s ease-in;
+				transform: rotate(${orderBy === 'asc' ? '180deg' : '0deg'});
 			}
 		}
 	`}

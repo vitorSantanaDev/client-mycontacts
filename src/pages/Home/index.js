@@ -7,6 +7,7 @@ import {
 	Container,
 	ListHeader,
 	ErrorContainer,
+	EmptyListContainer,
 	InputSearchContainer
 } from './styles'
 
@@ -14,10 +15,11 @@ import formatPhone from '../../utils/formatPhone'
 
 import Loader from '../../components/Loader'
 
+import sad from '../../assets/images/sad.svg'
 import edit from '../../assets/images/icons/edit.svg'
 import arrow from '../../assets/images/icons/arrow.svg'
 import trash from '../../assets/images/icons/trash.svg'
-import sad from '../../assets/images/sad.svg'
+import emptyBox from '../../assets/images/empty-box.svg'
 
 import ContactsService from '../../services/Contacts.service'
 import { ButtonComponent } from '../../components/FormStyles'
@@ -69,16 +71,22 @@ export default function Home() {
 	return (
 		<Container>
 			<Loader isLoading={isLoading} />
-			<InputSearchContainer>
-				<input
-					type="text"
-					value={searchTerm}
-					placeholder="Pesquisar contato..."
-					onChange={handleSearchTermChange}
-				/>
-			</InputSearchContainer>
-			<Header hasError={hasError}>
-				{!hasError && (
+			{!!contacts.length && !hasError && (
+				<InputSearchContainer>
+					<input
+						type="text"
+						value={searchTerm}
+						placeholder="Pesquisar contato..."
+						onChange={handleSearchTermChange}
+					/>
+				</InputSearchContainer>
+			)}
+			<Header
+				justifyContent={
+					hasError ? 'flex-end' : !contacts.length ? 'center' : 'space-between'
+				}
+			>
+				{!hasError && !!contacts.length && (
 					<strong>
 						{filteredContacts.length}{' '}
 						{filteredContacts.length === 1 ? 'Contato' : 'Contatos'}
@@ -101,6 +109,16 @@ export default function Home() {
 
 			{!hasError && (
 				<>
+					{!contacts.length && !isLoading && (
+						<EmptyListContainer>
+							<img src={emptyBox} alt="Empty box" />
+							<p>
+								Você ainda não tem nenhum contato cadastrado! Clique no botão{' '}
+								<strong>”Novo contato”</strong> à cima para cadastrar o seu
+								primeiro!
+							</p>
+						</EmptyListContainer>
+					)}
 					{!!filteredContacts.length && (
 						<ListHeader orderBy={orderBy}>
 							<button type="button" onClick={handleToggleOrderBy}>

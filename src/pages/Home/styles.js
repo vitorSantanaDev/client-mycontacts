@@ -7,10 +7,10 @@ export const Container = styled.div`
 `
 
 export const Header = styled.header`
-	${({ theme, hasError }) => css`
+	${({ theme, justifyContent }) => css`
 		display: flex;
 		align-items: center;
-		justify-content: ${hasError ? 'flex-end' : 'space-between'};
+		justify-content: ${justifyContent};
 		margin-top: ${theme.spacings.medium};
 		border-bottom: 2px solid ${theme.colors.gray[100]};
 		padding-bottom: ${theme.spacings.xsmall};
@@ -147,6 +147,26 @@ export const ErrorContainer = styled.div`
 				display: block;
 				margin-bottom: 0.8rem;
 				color: ${theme.colors.danger.main};
+			}
+		}
+	`}
+`
+
+export const EmptyListContainer = styled.div`
+	${({ theme }) => css`
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		margin-top: ${theme.spacings.xsmall};
+
+		> p {
+			text-align: center;
+			color: ${theme.colors.gray[200]};
+			margin-top: 0.8rem;
+
+			strong {
+				color: ${theme.colors.primary.main};
 			}
 		}
 	`}

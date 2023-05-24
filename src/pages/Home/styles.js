@@ -7,11 +7,13 @@ export const Container = styled.div`
 `
 
 export const Header = styled.header`
-	${({ theme }) => css`
+	${({ theme, hasError }) => css`
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: ${hasError ? 'flex-end' : 'space-between'};
 		margin-top: ${theme.spacings.medium};
+		border-bottom: 2px solid ${theme.colors.gray[100]};
+		padding-bottom: ${theme.spacings.xsmall};
 
 		strong {
 			color: ${theme.colors.gray[900]};
@@ -126,6 +128,25 @@ export const InputSearchContainer = styled.div`
 
 			&::placeholder {
 				color: ${theme.colors.gray[200]};
+			}
+		}
+	`}
+`
+
+export const ErrorContainer = styled.div`
+	${({ theme }) => css`
+		margin-top: ${theme.spacings.xsmall};
+		display: flex;
+		align-items: center;
+
+		.details {
+			margin-left: ${theme.spacings.small};
+
+			strong {
+				font-size: 2.2rem;
+				display: block;
+				margin-bottom: 0.8rem;
+				color: ${theme.colors.danger.main};
 			}
 		}
 	`}

@@ -8,7 +8,8 @@ import {
 	ListHeader,
 	ErrorContainer,
 	EmptyListContainer,
-	InputSearchContainer
+	InputSearchContainer,
+	SearchNotFoundContainer
 } from './styles'
 
 import formatPhone from '../../utils/formatPhone'
@@ -20,6 +21,7 @@ import edit from '../../assets/images/icons/edit.svg'
 import arrow from '../../assets/images/icons/arrow.svg'
 import trash from '../../assets/images/icons/trash.svg'
 import emptyBox from '../../assets/images/empty-box.svg'
+import maginifierQuestion from '../../assets/images/magnifier-question.svg'
 
 import ContactsService from '../../services/Contacts.service'
 import { ButtonComponent } from '../../components/FormStyles'
@@ -119,6 +121,22 @@ export default function Home() {
 							</p>
 						</EmptyListContainer>
 					)}
+
+					{!!contacts.length && !filteredContacts.length && (
+						<SearchNotFoundContainer>
+							<img src={maginifierQuestion} alt="Maginifier Question" />
+							<span>
+								Nenhum resultado foi encontrado para{' '}
+								<strong>
+									{'"'}
+									{searchTerm}
+									{'"'}
+								</strong>
+								.
+							</span>
+						</SearchNotFoundContainer>
+					)}
+
 					{!!filteredContacts.length && (
 						<ListHeader orderBy={orderBy}>
 							<button type="button" onClick={handleToggleOrderBy}>

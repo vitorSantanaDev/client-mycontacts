@@ -171,3 +171,17 @@ export const EmptyListContainer = styled.div`
 		}
 	`}
 `
+
+export const SearchNotFoundContainer = styled.div`
+	${({ theme }) => css`
+		display: flex;
+		align-items: flex-start;
+		margin-top: ${theme.spacings.xsmall};
+
+		span {
+			color: ${theme.colors.gray[200]};
+			margin-left: ${theme.spacings.small};
+			word-break: break-word;
+		}
+	`}
+`

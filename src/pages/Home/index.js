@@ -24,7 +24,7 @@ import emptyBox from '../../assets/images/empty-box.svg'
 import maginifierQuestion from '../../assets/images/magnifier-question.svg'
 
 import ContactsService from '../../services/Contacts.service'
-import { ButtonComponent } from '../../components/FormStyles'
+import Button from '../../components/Button'
 
 export default function Home() {
 	const [contacts, setContacts] = useState([])
@@ -102,9 +102,9 @@ export default function Home() {
 					<img src={sad} alt="Sad" />
 					<div className="details">
 						<strong>Ocorreu um erro ao obter os seus contatos!</strong>
-						<ButtonComponent onClick={handleTryAgain} type="button">
+						<Button onClick={handleTryAgain} type="button">
 							Tentar Novamente
-						</ButtonComponent>
+						</Button>
 					</div>
 				</ErrorContainer>
 			)}

@@ -38,7 +38,8 @@ export default {
 			main: '#FC5050',
 			light: '#F97171',
 			dark: '#F63131'
-		}
+		},
+		success: { main: '#51CA73' }
 	},
 	spacings: {
 		xxsmall: '0.8rem',

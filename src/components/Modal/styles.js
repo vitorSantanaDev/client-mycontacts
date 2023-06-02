@@ -23,13 +23,13 @@ export const Container = styled.div`
 		max-width: 45rem;
 		width: 100%;
 
-		h1 {
+		> h1 {
 			font-size: 2.4rem;
 			color: ${danger ? theme.colors.danger.main : theme.colors.gray[900]};
 		}
 
-		p {
-			margin-top: 0.8rem;
+		.modal-body {
+			margin-top: ${theme.spacings.medium};
 		}
 	`}
 `
@@ -45,8 +45,12 @@ export const Footer = styled.footer`
 			border: none;
 			background-color: transparent;
 			font-size: ${theme.font.sizes.medium};
-			margin-right: 0.8rem;
+			margin-right: ${theme.spacings.small};
 			color: ${theme.colors.gray[200]};
+
+			&:disabled {
+				cursor: not-allowed;
+			}
 		}
 	`}
 `

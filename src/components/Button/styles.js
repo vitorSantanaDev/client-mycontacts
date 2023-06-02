@@ -34,8 +34,8 @@ export const StyledButton = styled.button`
 		}
 
 		&:disabled {
-			background-color: #ccc;
-			cursor: not-allowed;
+			background-color: #ccc !important;
+			cursor: not-allowed !important;
 		}
 	`}
 `

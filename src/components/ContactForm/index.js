@@ -9,6 +9,8 @@ import isEmailValid from '../../utils/isEmailValid'
 import FormGroup from '../FormGroup'
 import Button from '../Button'
 
+import useSafeAsyncState from '../../hooks/use-safe-async-state'
+
 import { InputComponent, SelectComponent } from '../FormStyles'
 
 import CategoriesService from '../../services/Categories.service'
@@ -22,8 +24,8 @@ const ContactForm = forwardRef(function ContactForm(
 	const [email, setEmail] = useState('')
 	const [phone, setPhone] = useState('')
 	const [categoryID, setCategoryID] = useState('')
-	const [categories, setCategories] = useState([])
-	const [isLoadingCategories, setIsLoadingCategories] = useState(true)
+	const [categories, setCategories] = useSafeAsyncState([])
+	const [isLoadingCategories, setIsLoadingCategories] = useSafeAsyncState(true)
 	const [isSubmiting, setIsSubmiting] = useState(false)
 
 	const { errors, setError, removeError, getErrorMessageByFieldName } =
@@ -31,7 +33,7 @@ const ContactForm = forwardRef(function ContactForm(
 
 	const isFormValid = name && errors.length === 0
 
-	useEffect(loadCategories, [])
+	useEffect(loadCategories, [setCategories, setIsLoadingCategories])
 
 	useImperativeHandle(
 		ref,

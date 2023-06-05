@@ -67,4 +67,10 @@ describe('<Button />', () => {
 
 		expect(handleClick).toBeCalledTimes(1)
 	})
+
+	it('should match snapshot', () => {
+		const { container } = renderWithTheme(<Button>Button</Button>)
+
+		expect(container.firstChild).toMatchSnapshot()
+	})
 })
